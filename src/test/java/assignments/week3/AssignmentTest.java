@@ -16,7 +16,20 @@ public class AssignmentTest {
         }
         myList.printNodes();
 
+        // These printouts show successful completion of assignment 1
         System.out.println(myList.indexOf(10));
+        System.out.println(myList.indexOf(1));
+
+        // This test shows successful completion of assignment 2
+        myList.addFirst(60);
+        myList.printNodes();
+
+        // this test shows successful completion of assignment 3
+        System.out.println(myList.getKItemFromTheEnd(7).ID);
+
+        // this test shows successful completion of assignment 4
+        myList.removeKItemFromTheEnd(7);
+        myList.printNodes();
 
 
     }

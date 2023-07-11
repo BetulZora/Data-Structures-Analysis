@@ -78,11 +78,6 @@ public class AssignmentList {
         return null;
     }
 
-    /**
-     * This is for Assignment1: Find the indexOf an elemet and returnIt
-     * @param desiredNode
-     * @return
-     */
     public int indexOf(AssignmentNode desiredNode){
         if(isEmpty()) return -1;
         int index = 0;
@@ -97,6 +92,7 @@ public class AssignmentList {
         return -1;
     }
     public int indexOf(int desiredID){
+        // assignment1 write an indexOf method that uses an int param as ID to find an index and return index.
         if(isEmpty()) return -1;
         int index = 0;
         current = head;
@@ -118,11 +114,50 @@ public class AssignmentList {
         System.out.println("");
     }
 
+    public void addFirst(int value){
+        //Assignment 2: make an addFirst method with int param
+        AssignmentNode newNode = new AssignmentNode();
+        newNode.ID = value;
+        addNodeToHead(newNode);
+    }
+
+    public AssignmentNode getKItemFromTheEnd(int K) {
+        // Assignment 3 get the Kth Item from the end
+        AssignmentNode node1 = head;
+        AssignmentNode node2 = head;
+
+        for (int i = 0; i < K; i++) {
+            node1 = node1.next;
+        }
+
+        while(node1!=null){
+            node1 = node1.next;
+            node2 = node2.next;
+        }
+
+        return node2;
+    }
+
+    public void removeKItemFromTheEnd(int K){
+        // assignment 4 get the Kth Item from the end and delete it
+        AssignmentNode node1 = head;
+        AssignmentNode node2 = head;
+
+        for (int i = 0; i < K; i++) {
+            node1 = node1.next;
+        }
+        AssignmentNode previous = node2;
+        while(node1!=null){
+            node1 = node1.next;
+            previous = node2;
+            node2 = node2.next;
+        }
+
+        previous.next = node2.next;
+        node2.next = null;
 
 
-
-
-
+    }
 
 
 }
