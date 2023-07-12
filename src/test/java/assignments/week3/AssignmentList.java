@@ -6,6 +6,7 @@ public class AssignmentList {
     AssignmentNode head;
     AssignmentNode tail;
     AssignmentNode prev;
+    int size = 0;
 
     public boolean isEmpty(){
         if(head==tail) return true;
@@ -19,9 +20,11 @@ public class AssignmentList {
             if (head == null) {
                 this.head = newNode;
                 this.tail = newNode;
+                size++;
             } else {
                 this.tail.next = newNode;
                 this.tail = newNode;
+                size++;
             }
         }
     }
@@ -31,8 +34,17 @@ public class AssignmentList {
             System.out.println("A node with this ID already exists. Repeated ID values are not allowed");
 
         }else {
-            newNode.next = head;
-            head = newNode;
+            if(isEmpty()){
+                //case 1: if list is empty
+                head = newNode;
+
+
+            }else {
+                //case 2: list is not empty
+                newNode.next = head;
+                head = newNode;
+            }
+            size++;
         }
     }
     public void addAfterNode(AssignmentNode theNode, AssignmentNode newNode) {
@@ -45,6 +57,7 @@ public class AssignmentList {
                 if (current.ID == theNode.ID) {
                     newNode.next= current.next;
                     current.next= newNode;
+                    size++;
                     break;
 
                 }
@@ -60,6 +73,7 @@ public class AssignmentList {
             if (current.ID == nodeIDTODelete) {
                 prev.next = current.next;
                 current.next = null;
+                size--;
             }
             prev = current;
             current = current.next;
@@ -119,6 +133,7 @@ public class AssignmentList {
         AssignmentNode newNode = new AssignmentNode();
         newNode.ID = value;
         addNodeToHead(newNode);
+        // size is increased in addNodeToHeadMethod
     }
 
     public AssignmentNode getKItemFromTheEnd(int K) {
@@ -155,6 +170,7 @@ public class AssignmentList {
 
         previous.next = node2.next;
         node2.next = null;
+        size--;
 
 
     }
