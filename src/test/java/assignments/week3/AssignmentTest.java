@@ -9,7 +9,7 @@ public class AssignmentTest {
         System.out.println(myList.isEmpty());
         myList.printNodes();
 
-        for(int i = 0; i<10; i++){
+        for(int i = 1; i<=4; i++){
             AssignmentNode newNode = new AssignmentNode();
             newNode.ID = i;
             myList.addNodeToTail(newNode);
@@ -25,10 +25,10 @@ public class AssignmentTest {
         myList.printNodes();
 
         // this test shows successful completion of assignment 3
-        System.out.println(myList.getKItemFromTheEnd(7).ID);
+        System.out.println(myList.getKItemFromTheEnd(3).ID);
 
         // this test shows successful completion of assignment 4
-        myList.removeKItemFromTheEnd(7);
+        myList.removeKItemFromTheEnd(3);
         myList.printNodes();
 
 

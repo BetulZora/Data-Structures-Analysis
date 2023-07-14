@@ -37,8 +37,6 @@ public class AssignmentList {
             if(isEmpty()){
                 //case 1: if list is empty
                 head = newNode;
-
-
             }else {
                 //case 2: list is not empty
                 newNode.next = head;
@@ -167,6 +165,7 @@ public class AssignmentList {
             previous = node2;
             node2 = node2.next;
         }
+        if (node2==head) head = node2.next;
 
         previous.next = node2.next;
         node2.next = null;
