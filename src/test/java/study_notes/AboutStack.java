@@ -20,5 +20,14 @@ public class AboutStack {
 
         System.out.println(reversedString);
 
+
+
+        char[] charArray = myString.toCharArray();
+        char number = '4';
+
+        System.out.println("Character.valueOf(number) = " + Character.valueOf(number));
+
+
     }
+
 }
