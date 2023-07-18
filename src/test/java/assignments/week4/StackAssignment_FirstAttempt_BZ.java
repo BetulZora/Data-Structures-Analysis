@@ -2,7 +2,7 @@ package assignments.week4;
 
 import java.util.*;
 
-public class StackAssignment {
+public class StackAssignment_FirstAttempt_BZ {
 
     /**
      * Problem:
