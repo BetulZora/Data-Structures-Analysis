@@ -15,20 +15,20 @@ public class Bucket {
     public int get(int key){
         for (KeyValue<Integer,Integer> pair:
              bucket) {
-            if(pair.key.equals(key)) {
-                return pair.value;}
-            return -1;
+            if (pair.key.equals(key)) {
+                return pair.value;
+            }
 
         }
-        return 0;
+        return -1;
     }
 
     public void remove(int key){
         for (KeyValue<Integer,Integer> pair:
                 bucket) {
             if(pair.key.equals(key)) {
-           //     this.has;}
-          //  return -1;
+                this.bucket.remove(pair);
+                break;}
 
         }
     }

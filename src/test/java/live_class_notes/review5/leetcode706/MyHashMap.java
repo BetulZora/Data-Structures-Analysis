@@ -1,5 +1,6 @@
 package live_class_notes.review5.leetcode706;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyHashMap {
@@ -14,6 +15,7 @@ public class MyHashMap {
     public MyHashMap() {
         // at creation assign modNumber to 2341 and create hashMap
         this.modNumber = 2341;
+        this.hashMap=new ArrayList<>();
         // all buckets in ArrayList are empty
         for (int i = 0; i < modNumber; i++) {
             this.hashMap.add(new Bucket());
@@ -25,15 +27,20 @@ public class MyHashMap {
     public void put(int key, int value) {
         // use modulus to find index address
         int hashCode = key%modNumber; // this will give us an index of our list
-      //  this.hashMap.get(hashCode).update(key,value);
+        this.hashMap.get(hashCode).update(key,value);
 
     }
 
     public int get(int key) {
-        return 0;
+        // calculate index address with modulus
+        int hashCode =key%modNumber;// I have an index
+        return this.hashMap.get(hashCode).get(key);
     }
 
     public void remove(int key) {
+        // calculate index address with modulus
+        int hashCode =key%modNumber;// I have an index
+        this.hashMap.get(hashCode).remove(key);
 
     }
 }

@@ -10,7 +10,7 @@ public class HashMapApp {
         System.out.println(hm.get(1));
 
         hm.put(2342, 2342);
-        System.out.println(hm.get(1));
+        System.out.println("now" + hm.get(1));
     }
 
 }
