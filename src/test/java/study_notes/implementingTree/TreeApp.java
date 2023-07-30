@@ -14,5 +14,10 @@ public class TreeApp {
         System.out.println(Arrays.toString(numbers));
 
         VisualizeTree.printTree(tree.root, null, false);
+
+        System.out.println("PreOrder");
+        tree.preOrderTraversal(tree.root);
+        System.out.println("\nInOrder");
+        tree.inOrderTraversal(tree.root);
     }
 }
