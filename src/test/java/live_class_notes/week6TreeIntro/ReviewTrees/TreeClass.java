@@ -1,5 +1,8 @@
 package live_class_notes.week6TreeIntro.ReviewTrees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeClass {
 
     TreeNode root;
@@ -59,5 +62,35 @@ public class TreeClass {
         preOrderTraversal(root.leftChild);
         // recursively visit right subtree
         preOrderTraversal(root.rightChild);
+    }
+
+    void inOrderTraversal(TreeNode root){
+        if(root == null) return; // base case
+        inOrderTraversal(root.leftChild);
+        System.out.println(root.name);
+        inOrderTraversal(root.rightChild);
+    }
+
+    void postOrderTraversal(TreeNode root){
+
+        /**
+         * Post Order: Left, right, root
+         */
+        if(root==null) return;
+        postOrderTraversal(root.leftChild);
+        postOrderTraversal(root.rightChild);
+        System.out.println(root.name);
+    }
+
+    void levelOrderTraversal(){
+        if(root==null) return;
+        Queue<TreeNode> cue = new LinkedList<>();
+        cue.add(root);
+        while(!cue.isEmpty()){
+            TreeNode toVisit = cue.poll();
+            System.out.println((toVisit.name));
+            if(toVisit.leftChild!=null) cue.add(toVisit.leftChild);
+            if(toVisit.rightChild!=null) cue.add(toVisit.rightChild);
+        }
     }
 }
