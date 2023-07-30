@@ -22,6 +22,12 @@ public class QueueAssignment {
         }
 
         return Q;
+
+        /*
+        This can be accomplished by using Queue instead. Deque the first K elements into a stack.
+        Then enqueue the first K elements by popping from the stack.
+        Deque the rest of the elements and enque them again.
+         */
     }
 
     public static void main(String[] args) {
