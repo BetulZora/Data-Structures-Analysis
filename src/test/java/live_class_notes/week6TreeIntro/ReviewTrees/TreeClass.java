@@ -14,7 +14,6 @@ public class TreeClass {
     /**
      * Insert a new node to my tree
      */
-
     public void insert (TreeNode newNode){
         // case 1: Tree is empty ==> root will be newNode
 
@@ -44,5 +43,21 @@ public class TreeClass {
         }
 
 
+    }
+
+    void preOrderTraversal(TreeNode root){
+        /**
+         * traverse in PreOrder Style
+         * visit Root, then left, then right
+         */
+        // need base condition due to recursion
+        if (root == null) return;
+        // visit root node or perform operation at node
+        System.out.println(root.name);
+
+        // recursively visit left subtree
+        preOrderTraversal(root.leftChild);
+        // recursively visit right subtree
+        preOrderTraversal(root.rightChild);
     }
 }

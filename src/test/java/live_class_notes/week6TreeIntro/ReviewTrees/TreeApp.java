@@ -5,12 +5,15 @@ public class TreeApp {
 
     public static void main(String[] args) {
 
-        TreeClass tree = new TreeClass();
+        TreeClass studentTree = new TreeClass();
 
-        System.out.println(tree.root);
-        tree.insert(new TreeNode("John", "Locke", 5));
-        tree.insert(new TreeNode("Carrol", "Smith", 3));
-        tree.insert(new TreeNode("Fatih", "Bardak", 6));
-        tree.insert(new TreeNode("Kadifa", "Friend", 4));
+        System.out.println(studentTree.root);
+        studentTree.insert(new TreeNode("John", "Locke", 5));
+        studentTree.insert(new TreeNode("Carrol", "Smith", 3));
+        studentTree.insert(new TreeNode("Fatih", "Bardak", 6));
+        studentTree.insert(new TreeNode("Kadifa", "Friend", 4));
+
+        studentTree.preOrderTraversal(studentTree.root);
+        System.out.println("--------------------------------------");
     }
 }
