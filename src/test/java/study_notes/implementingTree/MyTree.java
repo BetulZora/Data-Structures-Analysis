@@ -21,6 +21,8 @@ public class MyTree {
             // case 1: value is less than currents value
             // branch left. If no left, create new Tnode, otherwise shift current to left
             if (value <= current.value){
+                // case 3: value is equal to currents value
+                // notice that if value == current.value our algorithm puts it on the left
                 if (current.leftChild == null) {
                     current.leftChild = newNode;
                     break;
@@ -35,7 +37,6 @@ public class MyTree {
                 current = current.rightChild;
             }
 
-            // case 3: value is equal to currents value
 
         }
     }
