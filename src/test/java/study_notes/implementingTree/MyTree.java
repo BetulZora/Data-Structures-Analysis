@@ -134,4 +134,51 @@ public class MyTree {
     }
     // Sum of all Nodes
 
+    /**
+     * Task1: Implement finding an integer value in a BST
+     *
+     * boolean contains(int value){}
+     */
+    boolean contains(int value){
+
+        // problem specifies a BST
+        TNode current = root;
+
+        if (current == null) {return false;}
+
+        while (current!=null){
+
+            if(current.value == value){ return true;}
+
+            if(current.value <= value){
+                current = current.rightChild;
+                continue;
+            }
+            if(current.value >= value){
+                current = current.leftChild;
+            }
+        }
+
+        return false;
+
+
+    }
+
+    /**
+     * Task2: Implement a method that returns true if the node is a leaf in BST
+     *
+     * see method:
+     * isLeaf(TNode node)
+     * Above
+     *
+     */
+
+    /**
+     * Task3: Implement a method that prints leaves of a BST
+     * see method:
+     * printLeaves(TNode root)
+     * Above
+     */
+
+
 }

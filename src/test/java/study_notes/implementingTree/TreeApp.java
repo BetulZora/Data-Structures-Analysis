@@ -23,5 +23,10 @@ public class TreeApp {
         tree.levelOrderTraversal();
         System.out.println("\nPostOrder");
         tree.postOrderTraversal(tree.root.rightChild);
+
+
+        System.out.println("\n");
+        System.out.println("Tree contains 5? " + tree.contains(5));
+        System.out.println("Tree contains 0? " + tree.contains(0));
     }
 }
