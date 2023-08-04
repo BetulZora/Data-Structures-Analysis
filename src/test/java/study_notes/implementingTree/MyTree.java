@@ -76,7 +76,7 @@ public class MyTree {
         Queue<TNode> queue=new LinkedList<>();
         queue.add(root);
         while(!queue.isEmpty()){
-            TNode toVisit=queue.poll();
+            TNode toVisit=queue.poll(); // poll is like dequeue
             System.out.print(toVisit.value+", ");
             if (toVisit.leftChild!=null) queue.add(toVisit.leftChild);
             if (toVisit.rightChild!=null) queue.add(toVisit.rightChild);
@@ -110,8 +110,9 @@ public class MyTree {
     }
     int height(TNode root){
         if (root==null) return -1;
-        if (isLeaf(root)) return 0;
-        return 1+ Math.max(height(root.leftChild), height(root.rightChild));
+        // so if using this method and get -1, know that it is an empty tree.
+        if (isLeaf(root)) return 0; // this is the base condition of the recursive function
+        return 1+ Math.max(height(root.leftChild), height(root.rightChild)); // recursively calculate height of each subtree and return the max.
     }
     public int calculateNodeDepthSums(){
         return nodeDepthSums(root, 0);
@@ -177,6 +178,24 @@ public class MyTree {
      * Task3: Implement a method that prints leaves of a BST
      * see method:
      * printLeaves(TNode root)
+     * Above
+     */
+    /**
+     * Task4: Implement a method that counts leaves of a BST.
+     * see method:
+     * countLeaves
+     * Above
+     */
+    /**
+     * Task5: Implement a method that returns sum of leaf values of a BST.
+     * see method:
+     * findSumOfLeaves
+     * Above
+     */
+    /**
+     * Task6: Implement a method that returns the height of a node in a BST.
+     * see method:
+     * height(TNode root)
      * Above
      */
 

@@ -21,12 +21,20 @@ public class TreeApp {
         tree.inOrderTraversal(tree.root);
         System.out.println("\nLevelOrder");
         tree.levelOrderTraversal();
-        System.out.println("\nPostOrder");
+        System.out.println("\nPostOrder of right subtree");
         tree.postOrderTraversal(tree.root.rightChild);
 
 
-        System.out.println("\n");
+        System.out.println("\n Test Contains function");
         System.out.println("Tree contains 5? " + tree.contains(5));
         System.out.println("Tree contains 0? " + tree.contains(0));
+
+        System.out.println("\n Height Calculations");
+        System.out.println("Height of a leaf: " + tree.height(tree.root.rightChild.rightChild));
+        System.out.println("Height of a parent of a leaf: " + tree.height(tree.root.rightChild));
+        System.out.println("Height of the root: " + tree.height(tree.root));
+
+
+
     }
 }
