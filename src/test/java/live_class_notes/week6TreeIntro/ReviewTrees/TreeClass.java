@@ -115,4 +115,29 @@ public class TreeClass {
 
         }
     }
+    void inOrderTraversalIterative(TreeNode root) {
+        // check if root is null
+        if (root == null) return;
+        // create a stack
+        Stack<TreeNode> stack = new Stack<>(); // using framework stack
+        // while loop until stack is empty
+        TreeNode current = root;
+        while (current!=null || !stack.isEmpty()) {
+            // Find left most node in tree
+            while(current!=null){
+                // push node before branching left to stack
+                stack.push(current);
+                current = current.leftChild;
+            } // when exiting this loop, current will be null
+            current = stack.pop();
+
+            // perform visit on popped node
+            System.out.print(current.name + " , ");
+            // push nodes in order of future visitation (right child now)
+           // if(current.rightChild!=null)stack.push(current.rightChild);
+            current = current.rightChild;
+
+
+        }
+    }
 }

@@ -10,7 +10,7 @@ public class TreeApp {
         System.out.println(studentTree.root);
         studentTree.insert(new TreeNode("John", "Locke", 5));
         studentTree.insert(new TreeNode("Carrol", "Smith", 3));
-        studentTree.insert(new TreeNode("Fatih", "Bardak", 6));
+        studentTree.insert(new TreeNode("Betul", "Zora", 6));
         studentTree.insert(new TreeNode("Kadifa", "Friend", 4));
 
         studentTree.preOrderTraversal(studentTree.root);
@@ -21,5 +21,10 @@ public class TreeApp {
 
         System.out.println("----------------------------------------------------------");
         studentTree.preOrderTraversalIterative(studentTree.root);
+
+        System.out.println("\nIn Order Iterative----------------------------------------------------------");
+        studentTree.inOrderTraversalIterative(studentTree.root);
+        System.out.println("\nIn Order Recursive----------------------------------------------------------");
+        studentTree.inOrderTraversal(studentTree.root);
     }
 }

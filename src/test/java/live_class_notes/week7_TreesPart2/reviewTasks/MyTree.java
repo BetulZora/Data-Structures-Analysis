@@ -69,21 +69,8 @@ public class MyTree {
             if (toVisit.rightChild!=null) queue.add(toVisit.rightChild);
         }
     }
-    public boolean isLeaf(TNode node) {
-        return node.leftChild==null && node.rightChild==null;
-    }
-    public void printLeaves(TNode root){
-        if (root==null) return;
-        // perform visit on Root
 
-        // Recursively Branch Left Subtree
-        printLeaves(root.leftChild);
-        printLeaves(root.rightChild);
-        if (isLeaf(root)) System.out.print(root.value + ", ");
-
-        // Recursively Branch Right Subtree
-    }
-    int countLeaves(TNode root){
+    /*int countLeaves(TNode root){
         if (root==null) return 0;
         if (isLeaf(root)) return 1;
         // recursively left
@@ -95,7 +82,9 @@ public class MyTree {
         if (isLeaf(root)) return root.value;
         return findSumOfLeaves(root.leftChild) + findSumOfLeaves(root.rightChild);
     }
-    int height(TNode root){
+
+     */
+    /*int height(TNode root){
         if (root==null) return -1;
         if (isLeaf(root)) return 0;
         return 1+ Math.max(height(root.leftChild), height(root.rightChild));
@@ -105,6 +94,8 @@ public class MyTree {
             return 0;
         return N.height;
     }
+
+     */
     public int calculateNodeDepthSums(){
         return nodeDepthSums(root, 0);
     }
@@ -115,7 +106,9 @@ public class MyTree {
         return A+nodeDepthSums(node.leftChild, A+1) +nodeDepthSums(node.rightChild, A+1);
     }
     // Assignment  Sum of All Nodes recursively
+    /*
     public int calculateNodeSums(){
+
         return nodeSums(root);
     }
 
@@ -124,6 +117,84 @@ public class MyTree {
 
         return node.value+ nodeSums(node.leftChild)+nodeSums(node.rightChild);
     }
-    // Sum of all Nodes
+
+     */
+    // Task 1: Implement finding an integer value in a BST (Binary Search Tree).
+    boolean contains(int value){
+        if(root == null) return false;
+        //need a starting point
+        TNode current = root;
+        while(current!=null){
+            if(value == current.value) return true;
+            if(value < current.value){
+                current = current.leftChild;
+            }else{
+                current = current.rightChild;
+            }
+        }
+        /** TODO
+         * write it myself after class ==> delete solution and start over.
+          */
+        return false;
+    }
+    //  Task 2: Implement a method that returns true if the node is a leaf in a BST.
+    boolean isLeaf(TNode node){
+        return node.leftChild == null && node.rightChild==null;
+    }
+    // Task 3: Implement a method that prints leaves of a BST.
+    void printLeaves(TNode root){ // print leaves in preOrder
+        if(root==null) return;
+        if(isLeaf(root)) System.out.println(root.value+ " ");
+        printLeaves(root.leftChild);
+        printLeaves(root.rightChild);
+
+    }
+    // Task 4: implement a method that returns the height of a node
+    int height(TNode root){
+        // if root is null, return -1
+        if (root == null) return -1;
+        // if leaf return 0
+        if(isLeaf(root)) return 0;
+        // else return 1 + max height of left and right subtree
+        return 1+ Math.max(height(root.rightChild), height(root.leftChild));
+    }
+
+    // Task 5: Implement a method that counts leaves of a BST
+    int countLeaves(TNode root){
+        // root return null
+        // isLeaf return 1
+        // collect counts recursively
+
+        if(root==null) return 0;
+        if(isLeaf(root)) return 1;
+        return countLeaves(root.leftChild)+ countLeaves(root.rightChild);
+
+    }
+
+    // Task 6: Implement a method that that returns sum of leaf nodes of a BST
+    int findSumOfLleaves(TNode root){
+        if(root==null) return 0;
+        if(isLeaf(root)) return root.value;
+        return findSumOfLleaves(root.leftChild)+ findSumOfLleaves(root.rightChild);
+    }
+
+    // Task 7: Implement a method that returns sum of Node values of a BST
+    int nodeSums(TNode root){
+        if(root==null) return 0;
+        return root.value + nodeSums(root.rightChild) + nodeSums(root.leftChild);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
