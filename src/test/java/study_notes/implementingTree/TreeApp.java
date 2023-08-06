@@ -31,7 +31,7 @@ public class TreeApp {
 
         System.out.println("\n Height Calculations");
         System.out.println("Height of a leaf: " + tree.height(tree.root.rightChild.rightChild));
-        System.out.println("Height of a parent of a leaf: " + tree.height(tree.root.rightChild));
+        System.out.println("Height of a parent of a leaf : " + tree.height(tree.root.rightChild));
         System.out.println("Height of the root: " + tree.height(tree.root));
 
 

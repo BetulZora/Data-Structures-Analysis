@@ -1,5 +1,7 @@
 package live_class_notes.week6TreeIntro.ReviewTrees;
 
+import java.util.Stack;
+
 public class TreeNode {
 
     // In a tree node, need the data in node, reference for left, reference for right
@@ -17,6 +19,8 @@ public class TreeNode {
         this.lastName = lastName;
         this.ID = ID;
     }
+
+
 
 
 

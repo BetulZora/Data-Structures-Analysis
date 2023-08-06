@@ -18,5 +18,8 @@ public class TreeApp {
         studentTree.inOrderTraversal(studentTree.root);
         System.out.println("--------------------------------------");
         studentTree.levelOrderTraversal();
+
+        System.out.println("----------------------------------------------------------");
+        studentTree.preOrderTraversalIterative(studentTree.root);
     }
 }

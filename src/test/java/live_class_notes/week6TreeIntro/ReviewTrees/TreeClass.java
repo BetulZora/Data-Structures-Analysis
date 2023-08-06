@@ -2,6 +2,7 @@ package live_class_notes.week6TreeIntro.ReviewTrees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class TreeClass {
 
@@ -91,6 +92,27 @@ public class TreeClass {
             System.out.println((toVisit.name));
             if(toVisit.leftChild!=null) cue.add(toVisit.leftChild);
             if(toVisit.rightChild!=null) cue.add(toVisit.rightChild);
+        }
+    }
+    void preOrderTraversalIterative(TreeNode root) {
+        // check if root is null
+        if (root == null) return;
+        // create a stack
+        Stack<TreeNode> stack = new Stack<>(); // using framework stack
+        // push the root to the stack
+        stack.push(root);
+        // while loop until stack is empty
+
+        while (!stack.isEmpty()) {
+            // pop Stack
+            TreeNode poppedNode = stack.pop();
+            // perform visit on popped node
+            System.out.print(poppedNode.name + " , ");
+            // push its children in Right child then Left Child order
+            if(poppedNode.rightChild!=null)stack.push(poppedNode.rightChild);
+            if(poppedNode.leftChild!=null) stack.push(poppedNode.leftChild); // will be visiting left next so it must be the last to be added
+
+
         }
     }
 }
