@@ -6,7 +6,7 @@ public class HeapifyTestApp {
 
         // {1, 2, 5, 6, 8, 21, 0}
         // 1, 2, 5, 6, 8, 21, 0, -1, -20, 87
-        int[] numbers={1,2,5,6,8,21,0, -1, -20 , 87};
+        int[] numbers={1,2,5,6,8,21,0, -1, -20 , 87,9,9,9,9,9,9,9,9};
         MyHeap heap=new MyHeap(numbers);
         heap.printHeap();
 
