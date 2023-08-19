@@ -1,4 +1,4 @@
-package live_class_notes.week8_Heap;
+package study_notes;
 
 import java.util.NoSuchElementException;
 
@@ -11,18 +11,13 @@ public class MyHeap {
         this.size=0;
     }
 
-    /**
-     * This constructor was designed for use in a grow()method.
-     * will include heapify
-     */
     public MyHeap(int[] arr) {
-        this.items = new int[arr.length]; // this creates an array the needed size, but no content
+        this.items = new int[arr.length];
         this.size=arr.length;
-        this.items=arr;  // be sure that my items is holding the provided array
+        this.items=arr;
         heapify();
     }
     public void heapify(){
-        // assuming that we do not being with an array of size 0
         int startIndex=(size/2)-1;
         for (int i = startIndex; i >=0 ; i--) {
             // if current element is not a valid parent bubble down it until it is valid.
@@ -30,11 +25,11 @@ public class MyHeap {
         }
     }
     public void heapifyCurrent(int index){
-        // This will continue until the parent is a valid parent
+        // This will continue until the parent is avalid parent
         if(!isValidParent(index)){
-            int largestChildIndex=largerChildIndex(index); // want to operate with the larger child
-            swap(index,largestChildIndex); // switch places / bubbling
-            heapifyCurrent(largestChildIndex); // see if it needs to be bubbled down further.
+            int largestChildIndex=largerChildIndex(index);
+            swap(index,largestChildIndex);
+            heapifyCurrent(largestChildIndex);
         }
     }
     public int peek() {
