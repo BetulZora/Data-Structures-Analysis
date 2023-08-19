@@ -1,0 +1,5 @@
+Note: Search algorithms are usually done on keys, unique sets of data.
+Therefore, no need to worry about repeat elements.
+
+
+Why did we learn search algorithms, do we really need them?
