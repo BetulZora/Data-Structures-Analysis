@@ -4,11 +4,8 @@ public class Search2DMatrix {
 
     public static void main(String[] args) {
         int[][] matrix={{1,3,5,7},{10,11,16,20},{23,30,34,60}};
-        System.out.println(searchMatrixLogNM(matrix, 7));
-        /**
-         * TODO: value supposed to give true, is giving false.
-         * Review after class
-         */
+        System.out.println(searchMatrix(matrix, 7));
+
     }
     public static boolean searchMatrix(int[][] matrix, int target) {
         // performs O(m+logn)
@@ -37,6 +34,16 @@ public class Search2DMatrix {
         return false;
     }
     public static boolean searchMatrixLogNM(int[][] matrix, int target) {
+        // perform the search with complexity log(m*n)
+
+        // divide index by columns, the int return is row, the remainder is columns of that element
+
+        /**
+         * TODO:
+         * Do this by myself after class. need to modify the other search algorithm to accommodate single array approach
+         * Get it from Review8_Search
+         */
+
         return false;
     }
 
