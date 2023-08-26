@@ -1,6 +1,9 @@
 package study_notes.searches;
 
 public class ExponentialSearch {
+    /**
+     * TODO: Try this on my own later
+     */
     public static int exponentialSearch(int[] array, int data){
         int bound=1;
         while (bound<array.length && array[bound]<data) bound*=2;
